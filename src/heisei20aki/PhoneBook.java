@@ -1,42 +1,33 @@
 package heisei20aki;
 
-import java.util.*;
-
 public class PhoneBook {
-	Map<String, Set<String>> book = new HashMap<String, Set<String>>();
+	String[][] book = new String[5][2];
 
-	public void add(String name, String phoneNumber) {
-		Set<String> numbers = book.get(name);
-		if (numbers == null) {
-			numbers = new HashSet<String>();
-		}
-		numbers.add(phoneNumber);
-		book.put(name, numbers);
+	public void add(int recordNumber, String name, String phoneNumber) {
+		String[] record = book[recordNumber - 1];
+		record[0] = name;
+		record[1] = phoneNumber;
 	}
 
-	public Set<String> get(String name) {
-		Set<String> numbers = book.get(name);
-		Set<String> set = new HashSet<String>();
-		if (numbers != null) {
-			set.addAll(numbers);
-		}
-		return set;
-	}
-
-	public void remove(String name) {
-		book.remove(name);
-	}
-
-	public void remove(String name, String phoneNumber) {
-		Set<String> numbers = book.get(name);
+	public void remove(int recordNumber) {
+		String[] record = book[recordNumber - 1];
+		record[0] = null;
+		record[1] = null;
 	}
 
 	public static void main(String[] args) {
 		PhoneBook pb = new PhoneBook();
-		pb.add("èºìcè~éi", "0236661234");
-		pb.add("èºìcè~éi", "08055551234");
-		for (String num : pb.get("èºìcè~éi")) {
-			System.out.println(num);
+		
+		pb.add(1, "éRå`ëæòY", "0236661234");
+		pb.add(3, "ìVì∂ÇÊÇµÇ›", "08011112345");
+		for (String[] record : pb.book) {
+			System.out.printf("%s %s\n", record[0], record[1]);
+		}
+		System.out.println("-------------------------");
+		
+		pb.remove(1);
+		for (String[] record : pb.book) {
+			System.out.printf("%s %s\n", record[0], record[1]);
 		}
 	}
 
