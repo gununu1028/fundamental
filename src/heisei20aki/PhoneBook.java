@@ -16,20 +16,27 @@ public class PhoneBook {
 		record[1] = null;
 	}
 
+	public void display() {
+		for (String[] record : book) {
+			String name = record[0];
+			String phoneNumber = record[1];
+			if (name != null && phoneNumber != null) {
+				System.out.printf("%s %s\n", record[0], record[1]);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		PhoneBook pb = new PhoneBook();
 
 		pb.set(1, "山形太郎", "0236661234");
 		pb.set(3, "天童よしみ", "08011112345");
-		for (String[] record : pb.book) {
-			System.out.printf("%s %s\n", record[0], record[1]);
-		}
+		pb.display();
+		
 		System.out.println("-------------------------");
 
 		pb.remove(1);
-		for (String[] record : pb.book) {
-			System.out.printf("%s %s\n", record[0], record[1]);
-		}
+		pb.display();
 	}
 
 }

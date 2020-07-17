@@ -7,12 +7,19 @@
 PhoneBook のメソッドは、次のとおりである。ここで、引数 recordNumber は行番号、 name は名前、 phoneNumber は電話番号を表す。
 
 `public void set(int recordNumber, String name, String phoneNumber)`
+
 電話帳に名前と電話番号を登録する。このメソッドを複数回呼ぶことによって、 名前と電話番号を格納できる。
 
 `public void remove(int recordNumber)`
+
 引数に指定した行番号の名前と電話番号を削除する。
 
+`public void display()`
+
+名前と電話番号の一覧を表示する。配列の空行は表示しない。
+
 `public static void main(String[] args)`
+
 テスト用のプログラムである。実行結果を以下に示す。
 
 ```
@@ -32,9 +39,7 @@ null null
 PhoneBook のメンバは、次のとおりである。
 
 `String[][] book`
+
 名前と電話番号を2次元配列によって保管する。5行2列を定義して、1行に名前と電話番号を格納していく。
 
-**設問** set メソッドと remove メソッドを実装せよ。
-
-
-
+**設問** set メソッド、 remove メソッド、 display メソッドを実装せよ。
