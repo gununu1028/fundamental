@@ -24,16 +24,9 @@ PhoneBook のメソッドは、次のとおりである。ここで、引数 rec
 
 ```
 山形太郎 0236661234
-null null
 天童よしみ 08011112345
-null null
-null null
 -------------------------
-null null
-null null
 天童よしみ 08011112345
-null null
-null null
 ```
 
 PhoneBook のメンバは、次のとおりである。
